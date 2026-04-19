@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LuxeEstate – Premium Real Estate</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#">Luxe<span>Estate</span></a>
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
+        <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+        <li class="nav-item"><a class="nav-link" href="#neighborhoods">Locations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#agents">Agents</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+        <li class="nav-item ms-2">
+          <a class="nav-link btn-nav" href="#"
+             data-bs-toggle="modal" data-bs-target="#contactModal">List Property</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="hero-eyebrow">Premium Real Estate</div>
+        <h1>Find Your Perfect<br/><em>Dream Home</em></h1>
+        <p>Discover curated luxury properties in the world's most sought-after locations.
+           Exceptional homes for extraordinary people.</p>
+        <div class="hero-btns">
+          <a href="#properties" class="btn-primary-custom">Explore Properties</a>
+          <a href="#" class="btn-outline-custom"
+             data-bs-toggle="modal" data-bs-target="#contactModal">Book a Tour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-down">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="hero-stats">
+    <div class="container">
+      <div class="inner">
+        <div class="stat-item">
+          <span class="stat-num" data-count="1200">0</span>
+          <span class="stat-label">Properties Listed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="850">0</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="15">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="30">0</span>
+          <span class="stat-label">Cities Covered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SEARCH BAR
+══════════════════════════════════════ -->
+<section class="search-section py-4">
+  <div class="container">
+    <ul class="nav search-tabs mb-0">
+      <li class="nav-item"><a class="nav-link active" href="#">Buy</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Rent</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Commercial</a></li>
+    </ul>
+    <div class="search-form">
+      <div class="flex-grow-1">
+        <input type="text" class="form-control" id="searchLocation"
+               placeholder="Enter city, neighborhood or address…"/>
+      </div>
+      <select class="form-select" style="width:160px" id="searchType">
+        <option value="">Property Type</option>
+        <option>Apartment</option>
+        <option>Villa</option>
+        <option>Penthouse</option>
+        <option>Studio</option>
+        <option>Townhouse</option>
+      </select>
+      <select class="form-select" style="width:140px" id="searchBudget">
+        <option value="">Budget</option>
+        <option>$100K–$250K</option>
+        <option>$250K–$500K</option>
+        <option>$500K–$1M</option>
+        <option>$1M–$5M</option>
+        <option>$5M+</option>
+      </select>
+      <select class="form-select" style="width:130px">
+        <option value="">Bedrooms</option>
+        <option>Studio</option>
+        <option>1 Bed</option>
+        <option>2 Beds</option>
+        <option>3 Beds</option>
+        <option>4+ Beds</option>
+      </select>
+      <button class="search-btn" onclick="handleSearch()">
+        <i class="fas fa-search me-2"></i>Search
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PHOTO GALLERY STRIP
+══════════════════════════════════════ -->
+<div class="gallery-strip">
+  <div class="row g-0">
+    <div class="col-6 col-md-3 gallery-item">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Living Room"/>
+      <div class="gallery-overlay"><span>Living Spaces</span></div>
+    </div>
+    <div class="col-6 col-md-3 gallery-item">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen"/>
+      <div class="gallery-overlay"><span>Modern Kitchens</span></div>
+    </div>
+    <div class="col-6 col-md-3 gallery-item">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80" alt="Bedroom"/>
+      <div class="gallery-overlay"><span>Master Suites</span></div>
+    </div>
+    <div class="col-6 col-md-3 gallery-item">
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Pool"/>
+      <div class="gallery-overlay"><span>Private Pools</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PROPERTIES SECTION
+══════════════════════════════════════ -->
+<section id="properties">
+  <div class="container">
+    <div class="row align-items-end mb-5">
+      <div class="col-md-6 fade-up">
+        <div class="section-eyebrow">Our Listings</div>
+        <h2 class="section-title">Premium <em>Properties</em></h2>
+        <div class="divider-blue"></div>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.9">
+          Hand-picked residences across the finest neighborhoods — crafted for those
+          who demand the extraordinary.
+        </p>
+      </div>
+      <div class="col-md-6 text-md-end fade-up">
+        <div class="filter-tabs justify-content-md-end">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="apartment">Apartment</button>
+          <button class="filter-btn" data-filter="villa">Villa</button>
+          <button class="filter-btn" data-filter="penthouse">Penthouse</button>
+        </div>
+      </div>
+    </div>
+    <!-- Cards are injected here by script.js -->
+    <div class="row g-4" id="propertyGrid"></div>
+    <div class="text-center mt-5 fade-up">
+      <a href="#" class="btn-primary-custom" onclick="loadMore(event)">Load More Properties</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FEATURED PROPERTY
+══════════════════════════════════════ -->
+<section id="featured" class="featured-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6 fade-up">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80"
+             class="featured-img" alt="Featured Property"/>
+      </div>
+      <div class="col-lg-6 fade-up">
+        <span class="featured-tag">⭐ Featured Property</span>
+        <div class="section-eyebrow">Exclusive Listing</div>
+        <h2 class="section-title">Oceanview <em>Villa</em><br/>Beverly Hills</h2>
+        <div class="divider-blue"></div>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:2">
+          A masterpiece of modern architecture nestled in prestigious Beverly Hills,
+          offering panoramic ocean views from every room with unmatched privacy and luxury.
+        </p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> 6 Bedrooms · 7 Bathrooms · 2 Guest Suites</li>
+          <li><i class="fas fa-check-circle"></i> Infinity Pool · Private Gym · Home Cinema</li>
+          <li><i class="fas fa-check-circle"></i> Smart Home System &amp; Solar Panels</li>
+          <li><i class="fas fa-check-circle"></i> 3-Car Garage with EV Charging</li>
+          <li><i class="fas fa-check-circle"></i> Gourmet Chef's Kitchen &amp; Wine Cellar</li>
+        </ul>
+        <div class="d-flex align-items-center gap-4 mb-4">
+          <div>
+            <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)">
+              Asking Price
+            </div>
+            <div class="price-tag">$<span>12,500,000</span></div>
+          </div>
+          <div style="width:1px;height:50px;background:var(--border)"></div>
+          <div>
+            <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)">
+              Area
+            </div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy)">
+              8,400 sqft
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn-primary-custom me-2"
+           data-bs-toggle="modal" data-bs-target="#contactModal">Schedule Viewing</a>
+        <a href="#" class="btn-outline-custom"
+           style="border-color:var(--border);color:var(--sky)">Virtual Tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     NEIGHBORHOODS
+══════════════════════════════════════ -->
+<section class="neighborhood" id="neighborhoods">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <div class="section-eyebrow justify-content-center"
+           style="color:rgba(255,255,255,0.4)">Explore</div>
+      <h2 class="section-title" style="color:var(--white)">
+        Top <em style="color:var(--accent)">Neighborhoods</em>
+      </h2>
+      <div class="divider-blue mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3 fade-up">
+        <div class="neighborhood-card">
+          <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="Manhattan"/>
+          <div class="neighborhood-card-overlay">
+            <h5>Manhattan</h5><span>142 Properties</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 fade-up">
+        <div class="neighborhood-card">
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Beverly Hills"/>
+          <div class="neighborhood-card-overlay">
+            <h5>Beverly Hills</h5><span>87 Properties</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 fade-up">
+        <div class="neighborhood-card">
+          <img src="https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?w=600&q=80" alt="Miami Beach"/>
+          <div class="neighborhood-card-overlay">
+            <h5>Miami Beach</h5><span>64 Properties</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 fade-up">
+        <div class="neighborhood-card">
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80" alt="Chicago"/>
+          <div class="neighborhood-card-overlay">
+            <h5>Chicago</h5><span>98 Properties</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════ -->
+<section id="why">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <div class="section-eyebrow justify-content-center">Our Advantage</div>
+      <h2 class="section-title">Why Choose <em>LuxeEstate</em></h2>
+      <div class="divider-blue mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <h4>Trusted Agency</h4>
+          <p>Over 15 years of excellence serving high-net-worth clients with integrity and discretion.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-magnifying-glass-dollar"></i></div>
+          <h4>Best Value</h4>
+          <p>Our market intelligence ensures you get the finest property at the most competitive price.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <h4>24/7 Support</h4>
+          <p>Dedicated concierge service available around the clock to assist your every need.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-globe"></i></div>
+          <h4>Global Reach</h4>
+          <p>Access to exclusive properties in 30+ countries through our worldwide partner network.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     AGENTS
+══════════════════════════════════════ -->
+<section id="agents" class="agents-section">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <div class="section-eyebrow justify-content-center">The Team</div>
+      <h2 class="section-title">Meet Our <em>Agents</em></h2>
+      <div class="divider-blue mx-auto"></div>
+    </div>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="agent-card">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
+               class="agent-img" alt="James Hartford"/>
+          <div class="agent-body">
+            <div class="agent-name">James Hartford</div>
+            <div class="agent-title">Senior Luxury Advisor</div>
+            <div class="agent-stats">
+              <div class="agent-stat"><strong>142</strong>Sales</div>
+              <div class="agent-stat"><strong>8 yrs</strong>Exp</div>
+            </div>
+            <div class="agent-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="agent-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
+               class="agent-img" alt="Sarah Montague"/>
+          <div class="agent-body">
+            <div class="agent-name">Sarah Montague</div>
+            <div class="agent-title">Estate Specialist</div>
+            <div class="agent-stats">
+              <div class="agent-stat"><strong>98</strong>Sales</div>
+              <div class="agent-stat"><strong>5 yrs</strong>Exp</div>
+            </div>
+            <div class="agent-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="agent-card">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80"
+               class="agent-img" alt="David Chen"/>
+          <div class="agent-body">
+            <div class="agent-name">David Chen</div>
+            <div class="agent-title">Investment Consultant</div>
+            <div class="agent-stats">
+              <div class="agent-stat"><strong>210</strong>Sales</div>
+              <div class="agent-stat"><strong>12 yrs</strong>Exp</div>
+            </div>
+            <div class="agent-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="agent-card">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80"
+               class="agent-img" alt="Emma Sinclair"/>
+          <div class="agent-body">
+            <div class="agent-name">Emma Sinclair</div>
+            <div class="agent-title">Buyer's Agent</div>
+            <div class="agent-stats">
+              <div class="agent-stat"><strong>76</strong>Sales</div>
+              <div class="agent-stat"><strong>4 yrs</strong>Exp</div>
+            </div>
+            <div class="agent-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <div class="section-eyebrow justify-content-center">Client Stories</div>
+      <h2 class="section-title">What Our Clients <em>Say</em></h2>
+      <div class="divider-blue mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 fade-up">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote-text">LuxeEstate found us a spectacular penthouse in Manhattan.
+            The entire process was seamless and their team went above and beyond.</div>
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                 class="reviewer-img" alt=""/>
+            <div>
+              <div class="reviewer-name">Michael &amp; Lisa Thompson</div>
+              <div class="reviewer-role">Penthouse Purchase, NYC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote-text">Exceptional service from start to finish. Their knowledge of
+            the luxury market is unmatched — secured us a deal well below asking price.</div>
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                 class="reviewer-img" alt=""/>
+            <div>
+              <div class="reviewer-name">Priya Sharma</div>
+              <div class="reviewer-role">Villa Purchase, Miami</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote-text">Working with LuxeEstate was a true pleasure. They understood
+            exactly what we needed and presented perfect options within days.</div>
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80"
+                 class="reviewer-img" alt=""/>
+            <div>
+              <div class="reviewer-name">Robert &amp; Clare Morgan</div>
+              <div class="reviewer-role">Estate Sale, London</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CTA / EMAIL SUBSCRIBE
+══════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content container">
+    <div class="section-eyebrow justify-content-center fade-up"
+         style="color:rgba(255,255,255,0.4)">Stay Updated</div>
+    <h2 class="fade-up">Get Exclusive <em>Listings</em><br/>Before Anyone Else</h2>
+    <p class="fade-up">Join our private mailing list and be the first to discover extraordinary
+       properties in the world's most coveted locations.</p>
+    <div class="cta-form fade-up">
+      <input type="email" id="ctaEmail" placeholder="Enter your email address…"/>
+      <button onclick="subscribeEmail()">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer id="contact">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-4">
+        <div class="footer-logo">Luxe<span>Estate</span></div>
+        <p class="footer-desc">Your trusted partner in luxury real estate. We curate the
+          finest properties for discerning buyers across the globe.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fas fa-chevron-right"></i>Home</a></li>
+          <li><a href="#properties"><i class="fas fa-chevron-right"></i>Properties</a></li>
+          <li><a href="#featured"><i class="fas fa-chevron-right"></i>Featured</a></li>
+          <li><a href="#agents"><i class="fas fa-chevron-right"></i>Agents</a></li>
+          <li><a href="#testimonials"><i class="fas fa-chevron-right"></i>Reviews</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Property Types</div>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Apartments</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Villas</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Penthouses</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Townhouses</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Commercial</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact">
+          <p><i class="fas fa-location-dot"></i>
+            1200 Wilshire Blvd, Suite 800<br/>Beverly Hills, CA 90210
+          </p>
+          <p><i class="fas fa-phone"></i>+1 (800) 555-LUXE</p>
+          <p><i class="fas fa-envelope"></i>hello@luxeestate.com</p>
+          <p><i class="fas fa-clock"></i>Mon–Sat: 9:00 AM – 7:00 PM</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span>© 2025 LuxeEstate. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service · Cookie Policy</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ══════════════════════════════════════
+     CONTACT / BOOKING MODAL
+══════════════════════════════════════ -->
+<div class="modal fade" id="contactModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Book a Viewing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" placeholder="John"/>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="Doe"/>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="john@example.com"/>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" placeholder="+1 (555) 000-0000"/>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Property Interest</label>
+            <select class="form-select">
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Penthouse</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" class="form-control"/>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Message (Optional)</label>
+            <textarea class="form-control" rows="3" placeholder="Any specific requirements?"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary-custom w-100" onclick="submitContact()">Request Viewing</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     TOAST NOTIFICATION
+══════════════════════════════════════ -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert">
+    <div class="toast-header">
+      <i class="fas fa-check-circle me-2" style="color:var(--accent)"></i>
+      <strong class="me-auto">LuxeEstate</strong>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body" id="toastMsg">Success!</div>
+  </div>
+</div>
+
+<!-- Bootstrap JS (must come before our script) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Our Custom JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
