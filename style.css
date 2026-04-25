@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5 {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1800&q=80') center/cover no-repeat;
+  background: url('images/hero1-bg.jpg.jpeg') center/cover no-repeat;
   transform: scale(1.06);
   animation: heroPan 22s ease-in-out infinite alternate;
 }
@@ -702,7 +702,7 @@ section { padding: 6rem 0; }
 .cta-section { position: relative; overflow: hidden; }
 .cta-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800&q=80') center/cover no-repeat;
+  background: url('images/cta-bg.jpg') center/cover no-repeat;
 }
 .cta-overlay {
   position: absolute; inset: 0;

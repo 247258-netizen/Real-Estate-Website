@@ -7,7 +7,7 @@
 const properties = [
   {
     id: 1, type: 'penthouse',
-    img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=700&q=80',
+    img: 'images/prop-penthouse1.jpg',
     badge: 'For Sale', featured: 'New Listing',
     price: '$4,200,000', name: 'Sky Penthouse Residence',
     location: 'Manhattan, New York',
@@ -15,7 +15,7 @@ const properties = [
   },
   {
     id: 2, type: 'villa',
-    img: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80',
+    img: 'images/prop-villa1.jpg',
     badge: 'For Sale', featured: 'Premium',
     price: '$7,850,000', name: 'Sunrise Villa Estate',
     location: 'Palm Beach, Florida',
@@ -23,7 +23,7 @@ const properties = [
   },
   {
     id: 3, type: 'apartment',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80',
+    img: 'images/prop-appartment1.jpg',
     badge: 'For Rent', featured: '',
     price: '$8,500/mo', name: 'Lakeview Modern Apartment',
     location: 'Chicago, Illinois',
@@ -31,7 +31,7 @@ const properties = [
   },
   {
     id: 4, type: 'villa',
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80',
+    img: 'images/prop-villa2.jpg',
     badge: 'For Sale', featured: 'Hot Deal',
     price: '$3,100,000', name: 'Hillside Private Villa',
     location: 'Los Angeles, California',
@@ -39,7 +39,7 @@ const properties = [
   },
   {
     id: 5, type: 'apartment',
-    img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80',
+    img: 'images/prop-apartment2.jpg',
     badge: 'For Rent', featured: '',
     price: '$5,200/mo', name: 'Downtown Luxury Suite',
     location: 'Miami, Florida',
@@ -47,7 +47,7 @@ const properties = [
   },
   {
     id: 6, type: 'penthouse',
-    img: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=700&q=80',
+    img: 'images/prop-penthouse2.jpg',
     badge: 'For Sale', featured: 'Exclusive',
     price: '$9,500,000', name: 'Grand Rooftop Penthouse',
     location: 'San Francisco, California',
